@@ -43,8 +43,10 @@ def listAllFiles(srcPath, destFile, fileTypes, excludeFiles):
             p = os.path.join(dirpath, d)
             if d.lower() in excludeFiles:
                 continue
-
-            logging.info(f'd ==> {p}')
+            if d[0] == ".":
+                continue
+            
+            # logging.info(f'd ==> {p}')
             c, l = listAllFiles(p, destFile, fileTypes, excludeFiles)
             counter += c
             lines += l
@@ -125,13 +127,13 @@ if __name__ == "__main__":
     parser.add_argument('--files', metavar='string', required=False,
                         dest='fileTypes',
                         help='files to include',
-                        default='.c,.c++,.cs,.java,.m,.mm,.js,.ts,.vue,.py'
+                        default='.c,.c++,.cs,.java,.kt,.m,.mm,.js,.ts,.vue,.py,.go'
                         )
     
     parser.add_argument('--exclude', metavar='exclude', required=False,
                         dest='excludeFiles',
                         help='file or directory to exclude',
-                        default='node_modules')
+                        default='node_modules;plugin;plugins;Standard Assets')
 
     parser.add_argument("--append", type=str2bool, nargs='?',
                             const=True, default=False,
