@@ -114,7 +114,7 @@ def str2bool(v):
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description='Merge Script Into One File for Software Left')
+    parser = argparse.ArgumentParser(description='Merge Script Into One File')
     parser.add_argument('--src', metavar='path', required=False,
                         dest='srcPath',
                         help='the path to source folder',

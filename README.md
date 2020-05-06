@@ -7,7 +7,7 @@ python3 ScriptLeft.py -h
 usage: ScriptLeft.py [-h] [--src path] [--dest path] [--files string]
                      [--exclude exclude] [--append [APPEND]] [--log LOGFILE]
 
-Merge Script Into One File for Software Left
+Merge Script Into One File
 
 optional arguments:
   -h, --help         show this help message and exit
